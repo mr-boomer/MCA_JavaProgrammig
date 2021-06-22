@@ -1,0 +1,51 @@
+import java.io.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    try{
+	FileWriter f1=new FileWriter("one.txt",true);
+		FileWriter f2=new FileWriter("two.txt",true);
+			FileWriter f3=new FileWriter("three.txt",true);
+			
+			PrintWriter pw1=new PrintWriter(f1);
+			PrintWriter pw2=new PrintWriter(f2);
+			PrintWriter pw3=new PrintWriter(f3);
+			pw1.write("heloo wc to gehu\n heloo World\n java programming\n welcome to GDB Online \n GEHU university");
+			pw2.write("heloo World\n java programming\n welcome to GDB Online \n GEHU university\n opps");
+	
+			f1.flush();
+			pw1.close();
+			f2.flush();
+			pw2.close();
+		
+			FileReader fr=new FileReader("one.txt");
+		    BufferedReader br1 =new BufferedReader(fr);
+		    	FileReader fr1=new FileReader("two.txt");
+		     BufferedReader br2 =new BufferedReader(fr1);
+		    String str1=br1.readLine();
+		     String str2=br2.readLine();
+		    
+		     while (str1 != null || str2 !=null)
+        {
+            if(str1 != null)
+            {
+                pw3.println(str1);
+                str1 = br1.readLine();
+            }
+              
+            if(str2 != null)
+            {
+                pw3.println(str2);
+                str2 = br2.readLine();
+            }
+        }
+        	f3.flush();
+			pw3.close();
+			
+	    }
+	    catch(Exception e)
+	    {
+	        
+	    }
+	}
+}
