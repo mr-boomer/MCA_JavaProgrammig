@@ -1,0 +1,29 @@
+abstract class Person{  
+    String person_name;
+    int id;
+   Person()
+   {
+    System.out.println("person ");}  
+   abstract void setDetails();
+   String name="Akansha";
+   int id= 1110;
+   double salaray=890000.00;
+   int jioning_year=2000;  
+
+ }  
+
+ class Employee extends Person{  
+   double salaray=900.00;
+   int jioning_year=2012;  
+
+ void setDetails(){System.out.println("salary is "+salary+"dateisn"+jioning_year);}  
+ }  
+
+ class TestAb{  
+ public static void main(String args[]){  
+  Person obj = new Employee();  
+  obj.setDetails();  
+
+
+ }  
+}
